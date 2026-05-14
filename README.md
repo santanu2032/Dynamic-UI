@@ -35,7 +35,7 @@ This module acts as a specialized presentation and animation layer for **Project
 
 ---
 
-## 💻 Code Highlight: Center Calculation
+## 💻 Code Highlight: 
 
 To ensure reliable rendering across different device screens, the engine relies on extracted, modular functions. Here is a conceptual look at how the center is handled to feed the motion engines:
 
