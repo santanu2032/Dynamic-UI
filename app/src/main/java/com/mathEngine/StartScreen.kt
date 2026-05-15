@@ -26,7 +26,12 @@ fun StartScreen(){
     val centerX=center.x
     val centerY=center.y
 
-    Box(modifier = Modifier.fillMaxSize(),
+    Box(modifier = Modifier.fillMaxSize().onSizeChanged { size ->
+       val center = Offset(
+            x = size.width / 2f,
+            y = size.height / 2f
+        )
+       },
         contentAlignment = Alignment.Center) {
 
 
