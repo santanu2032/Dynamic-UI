@@ -51,8 +51,8 @@ fun BackgroundUI() {
                         // Move star toward center
                         val ratio = star[2] / dist//scaling factor
                         stars[i] = floatArrayOf(
-                            star[0] - (dx * ratio),// calculating the position x toward center, here (dx * ratio) is the actual distance from the center during a single frame
-                            star[1] - (dy * ratio),// calculating the position y toward center, here (dy * ratio) is the actual distance from the center during a single frame
+                            star[0] - (dx * ratio),// calculating the position x toward center, here (dx * ratio) is the  distance to move along x-axis during a single frame
+                            star[1] - (dy * ratio),// calculating the position y toward center, here (dy * ratio) is the distance to move along y-axis during a single frame
                             star[2]
                         )
                     }
