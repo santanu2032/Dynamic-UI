@@ -5,11 +5,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameMillis
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -17,14 +14,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.delay
 import com.ui.BackgroundUI
-import com.ui.SatellitePointUI
 import com.ui.TrailUI
-import java.nio.file.Files.size
-import com.mathEngine.getScreenCenter
+
 @Composable
-fun MainScreen(){
+fun StartScreen(){
 
     val circleEngine = remember { CircularMotionEngine() }
     val trail = remember { mutableStateListOf<Offset>() }
@@ -32,12 +26,7 @@ fun MainScreen(){
     val centerX=center.x
     val centerY=center.y
 
-    Box(modifier = Modifier.fillMaxSize().onSizeChanged { size ->
-       val center = Offset(
-            x = size.width / 2f,
-            y = size.height / 2f
-        )
-       },
+    Box(modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center) {
 
 

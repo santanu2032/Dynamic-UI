@@ -26,7 +26,7 @@ fun TrailUI(
 
             drawLine(
                 color = trailColor.copy(alpha = alpha),
-                start = positions[i - 1],
+                start = positions[i - 1],//length of the trail
                 end = positions[i],
                 strokeWidth = alpha * 6f, // line gets thicker toward the tip
                 cap = StrokeCap.Round
