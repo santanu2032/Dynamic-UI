@@ -1,6 +1,5 @@
-package com.mathEngine
+package com.mathEngine.CME.UI
 
-import android.R
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,10 +12,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.zIndex
+import com.mathEngine.CME.CircularMotionEngine
 import kotlinx.coroutines.delay
 
 @Composable
-  fun onDrawCustomCircle(engine: CircularMotionEngine)
+  fun OnDrawCustomCircle(engine: CircularMotionEngine)
     {
 
       var cx=0f
@@ -36,14 +37,14 @@ import kotlinx.coroutines.delay
         ///the draw logic
 
 
-        Canvas(modifier = Modifier.fillMaxSize()) {
+        Canvas(modifier = Modifier.fillMaxSize().zIndex(0f)) {
           drawCircle(
             color= Color.White,
-            radius = 10f,
+            radius = 4f,
             center=a
           )
           drawCircle(Color.Black,
-          radius=90f
+          radius=149f
           )
         }
 

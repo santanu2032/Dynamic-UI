@@ -1,4 +1,4 @@
-package com.ui
+package com.mathEngine.CME.UI
 
 
 
@@ -8,12 +8,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.zIndex
 
 @Composable
 fun TrailUI(
     modifier: Modifier = Modifier,
     positions: List<Offset>,
-    trailColor: Color = Color.White
+    trailColor: Color = Color.Yellow
 ) {
     Canvas(modifier = modifier) {
         if (positions.size < 2) return@Canvas

@@ -1,4 +1,4 @@
-package com.ui
+package com.mathEngine.CME.UI
 
 
 import androidx.compose.foundation.Canvas
@@ -7,7 +7,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.draw
 
 @Composable
 fun SatellitePointUI(position: Offset){

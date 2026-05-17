@@ -1,7 +1,7 @@
 package com.mathEngine
 
 import kotlin.math.sqrt
-import com.mathEngine.getScreenCenter
+
 class ParticleSystem()
 {
     val centerX = 1000f

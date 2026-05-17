@@ -1,13 +1,13 @@
-package com.mathEngine
+package com.mathEngine.CME
 
 import androidx.compose.ui.geometry.Offset
-import kotlin.math.cos;
-import kotlin.math.sin;
+import kotlin.math.cos
+import kotlin.math.sin
 
 class CircularMotionEngine {
 
    private var speed = 0.02f
-   private var radius = 100f
+   private var radius = 150f
    private var angle = 0.0f
    private var x = 0.0f
    private var y = 0.0f

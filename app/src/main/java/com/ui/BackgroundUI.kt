@@ -27,7 +27,7 @@ fun BackgroundUI() {
         }
     }
 
-    Canvas(modifier = Modifier.fillMaxSize().background(Color.Black)) {
+    Canvas(modifier = Modifier.fillMaxSize().background(Color.Black)) {//draw the falling star effect
         val scaleX = size.width / 2000f
         val scaleY = size.height / 2000f
         val currentTick=frameTick
