@@ -19,7 +19,7 @@ import com.ui.values.CustomColorKT
 
 @Composable
 fun DrawMainScreenBackground() {
-    Box(modifier = Modifier.fillMaxSize().background(Color.Black)) {
+    Box(modifier = Modifier.fillMaxSize().background(CustomColorKT.NavyBlue())) {
 
             Text(
                 text = "Test",

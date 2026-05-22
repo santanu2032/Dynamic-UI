@@ -25,4 +25,16 @@ object CustomColorKT {
     fun Charcoal(): Color {
         return Color(0xFF36454F)
     }
+
+    fun SlateGray(): Color {
+        return Color(0xFF708090)
+    }
+
+    fun DeepPurple(): Color {
+        return Color(0xFF673AB7)
+    }
+
+    fun GoldenYellow(): Color {
+        return Color(0xFFFFD700)
+    }
 }
