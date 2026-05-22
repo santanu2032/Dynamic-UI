@@ -1,4 +1,4 @@
-package com.Presentation.ui.values
+package com.Presentation.UI.values
 
 import androidx.compose.ui.graphics.Color
 object CustomColorKT {

@@ -1,4 +1,4 @@
-package com.Presentation.ui
+package com.Presentation.UI
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding

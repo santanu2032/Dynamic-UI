@@ -1,21 +1,20 @@
-package com.Presentation.ui
+package com.Presentation.UI.Event_I
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.Presentation.ui.mainScreenUI.DrawMainScreenBackground
 
 @Preview
 @Composable
-fun drawMainScreen(){
-
-    Box(modifier = Modifier.fillMaxSize()){
-
-        DrawMainScreenBackground()
-
+fun Event_1(){
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Black)
+    ) {
     }
-
-
 }

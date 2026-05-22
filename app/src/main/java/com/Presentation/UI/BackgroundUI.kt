@@ -1,4 +1,4 @@
-package com.Presentation.ui
+package com.Presentation.UI
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -7,10 +7,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import kotlinx.coroutines.android.awaitFrame
-import kotlin.math.sqrt
 import com.mathEngine.ParticleSystem
-import kotlinx.coroutines.delay
+
 @Composable
 fun BackgroundUI() {
 

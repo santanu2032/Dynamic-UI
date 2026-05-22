@@ -13,8 +13,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.Presentation.ui.StartScreen
-import com.Presentation.ui.drawMainScreen
+import com.Presentation.UI.StartScreen
+import com.Presentation.UI.MainScreen
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 if (showMainScreen) {
-                    drawMainScreen()
+                    MainScreen()
                 } else {
                     StartScreen()
                 }

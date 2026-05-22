@@ -1,4 +1,4 @@
-package com.Presentation.ui.values;
+package com.Presentation.UI.values;
 
 public class CustomColor {//hardcoded colors
     private CustomColor() {

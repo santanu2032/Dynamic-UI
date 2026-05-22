@@ -1,4 +1,4 @@
-package com.Presentation.ui.mainScreenUI
+package com.Presentation.UI.mainScreenUI
 
 interface EventLink {
     fun onBoxIClicked(): Boolean
