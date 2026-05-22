@@ -1,4 +1,4 @@
-package com.ui.mainScreenUI
+package com.Presentation.ui.mainScreenUI
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

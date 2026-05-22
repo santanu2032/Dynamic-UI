@@ -1,4 +1,4 @@
-package com.santanuapi.testUI
+package com.Presentation.Android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -13,10 +13,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.ui.StartScreen
+import com.Presentation.ui.StartScreen
+import com.Presentation.ui.drawMainScreen
 import kotlinx.coroutines.delay
-import com.ui.drawMainScreen
-
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +23,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = Color.Black
+                modifier = Modifier.Companion.fillMaxSize(),
+                color = Color.Companion.Black
             ) {
                 var showMainScreen by remember { mutableStateOf(false) }
 
@@ -43,4 +42,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-

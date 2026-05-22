@@ -1,4 +1,4 @@
-package com.ui.mainScreenUI
+package com.Presentation.ui.mainScreenUI
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 
 @Preview
 @Composable
-fun PrototypeBox_II(){
+fun PrototypeBox_III(){
 
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -24,7 +24,7 @@ fun PrototypeBox_II(){
             .fillMaxWidth(0.4f)
             .fillMaxHeight(0.2f)
             .background(color = Color.White, shape = RoundedCornerShape(16.dp))
-            .align(BiasAlignment(horizontalBias = 0.8f, verticalBias = -0.35f))
+            .align(BiasAlignment(horizontalBias = -0.8f, verticalBias = 0.35f))
         ) {
 
         }
