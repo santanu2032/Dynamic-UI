@@ -17,7 +17,7 @@ import androidx.compose.ui.zIndex
 
 @Preview
 @Composable
-fun taskUI(){
+fun NavigationBar(){
     Box(modifier = Modifier.fillMaxSize()) {
         Box(
             modifier = Modifier
@@ -33,7 +33,9 @@ fun taskUI(){
                     .background(Color.White)
                     .padding(10.dp)
                     .align (Alignment.BottomStart)
-            ) { }
+            ) {
+
+            }
 
             Column(
                 modifier = Modifier

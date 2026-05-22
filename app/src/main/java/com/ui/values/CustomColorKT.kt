@@ -37,4 +37,7 @@ object CustomColorKT {
     fun GoldenYellow(): Color {
         return Color(0xFFFFD700)
     }
+    fun EerieBlack(): Color {
+        return Color(0xFF1B1B1B)
+    }
 }
