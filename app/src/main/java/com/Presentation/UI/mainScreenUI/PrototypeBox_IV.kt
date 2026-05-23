@@ -24,6 +24,7 @@ import com.Presentation.UI.mainScreenUI.LocalDomain.Worker
 fun PrototypeBox_IV(){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
+    val worker = remember { Worker() }
     Box(modifier = Modifier.fillMaxSize()) {
 
         Box(modifier = Modifier
@@ -34,9 +35,8 @@ fun PrototypeBox_IV(){
             .align(BiasAlignment(horizontalBias = 0.8f, verticalBias = 0.35f))
             .clickable {
                 isClicked = !isClicked
-                val obj = Worker()
                 try {
-                    obj.onBoxIVClicked()
+                    worker.onBoxIVClicked(isClicked)
                 }
                 catch (e: Exception) {
                     System.err.println(e)

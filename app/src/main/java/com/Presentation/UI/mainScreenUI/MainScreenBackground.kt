@@ -14,7 +14,7 @@ import com.Presentation.UI.values.CustomColorKT
 @Preview
 
 @Composable
-fun DrawMainScreenBackground() {
+fun DrawMainScreenBackground(eventLink: EventLink) {
     Box(modifier = Modifier.fillMaxSize().background(CustomColorKT.EerieBlack())) {
         Text(
             text = "Test",
@@ -22,7 +22,7 @@ fun DrawMainScreenBackground() {
             color = Color.White
         )
         StatusBar()
-        PrototypeBox_I()
+        PrototypeBox_I(eventLink)
         PrototypeBox_II()
         PrototypeBox_III()
         PrototypeBox_IV()

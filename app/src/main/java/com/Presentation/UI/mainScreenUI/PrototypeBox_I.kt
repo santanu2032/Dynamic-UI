@@ -15,13 +15,17 @@ import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+
 import androidx.compose.ui.unit.dp
 import com.Presentation.UI.mainScreenUI.LocalDomain.Worker
-@Preview
+
+//@Preview
 @Composable
-fun PrototypeBox_I(){
+fun PrototypeBox_I(eventLink: EventLink){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
+
+
     Box(modifier = Modifier.fillMaxSize()) {
 
         Box(modifier = Modifier
@@ -32,9 +36,8 @@ fun PrototypeBox_I(){
             .align(BiasAlignment(horizontalBias = -0.8f, verticalBias = -0.35f))
             .clickable {
                 isClicked = !isClicked
-                val obj = Worker()
                 try {
-                    obj.onBoxIClicked()
+                    eventLink.onBoxIClicked(isClicked)
                 }
                 catch (e: Exception) {
                     System.err.println(e)
@@ -43,4 +46,12 @@ fun PrototypeBox_I(){
             }
         ) { }
     }
+}
+@Preview
+@Composable
+fun TestUI(){
+    val mockEventLink = remember {
+        Worker()
+    }
+    PrototypeBox_I(eventLink = mockEventLink)
 }

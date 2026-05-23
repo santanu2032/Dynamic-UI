@@ -15,18 +15,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.Presentation.UI.StartScreen
 import com.Presentation.UI.MainScreen
+import com.Presentation.UI.mainScreenUI.EventLink
+import com.Presentation.UI.mainScreenUI.LocalDomain.Worker
 import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             Surface(
-                modifier = Modifier.Companion.fillMaxSize(),
-                color = Color.Companion.Black
+                modifier = Modifier.fillMaxSize(),
+                color = Color.Black
             ) {
                 var showMainScreen by remember { mutableStateOf(false) }
+                val Link = remember { Worker() }
 
                 LaunchedEffect(Unit) {
                     delay(5000)
@@ -34,11 +38,13 @@ class MainActivity : ComponentActivity() {
                 }
 
                 if (showMainScreen) {
-                    MainScreen()
+                    MainScreen(Link)
                 } else {
                     StartScreen()
                 }
             }
+
+            var boxOneStatus by remember { mutableStateOf(true) }
         }
     }
 }

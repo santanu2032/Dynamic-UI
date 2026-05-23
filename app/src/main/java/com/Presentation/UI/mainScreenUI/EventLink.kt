@@ -1,8 +1,8 @@
 package com.Presentation.UI.mainScreenUI
 
 interface EventLink {
-    fun onBoxIClicked(): Boolean
-    fun onBoxIIClicked(): Boolean
-    fun onBoxIIIClicked(): Boolean
-    fun onBoxIVClicked(): Boolean
+    fun onBoxIClicked(currentStatus: Boolean): Boolean
+    fun onBoxIIClicked(currentStatus: Boolean): Boolean
+    fun onBoxIIIClicked(currentStatus: Boolean): Boolean
+    fun onBoxIVClicked(currentStatus: Boolean): Boolean
 }
