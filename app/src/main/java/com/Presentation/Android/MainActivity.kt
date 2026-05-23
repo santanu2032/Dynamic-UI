@@ -13,11 +13,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.Presentation.UI.StartScreen
-import com.Presentation.UI.MainScreen
-import com.Presentation.UI.mainScreenUI.EventLink
-import com.Presentation.UI.mainScreenUI.LocalDomain.Worker
+import com.Presentation.CommonUI.StartScreen
+import com.Presentation.CommonUI.MainScreen
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.Worker
 import kotlinx.coroutines.delay
+
 
 class MainActivity : ComponentActivity() {
 

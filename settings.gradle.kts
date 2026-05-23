@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TestUI"
 include(":app")
+include(":shared")
