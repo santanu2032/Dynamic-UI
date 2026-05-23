@@ -19,12 +19,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.Presentation.UI.mainScreenUI.LocalDomain.Worker
 
-@Preview
+
 @Composable
-fun PrototypeBox_III(){
+fun PrototypeBox_III(eventLink: EventLink){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
-    val worker = remember { Worker() }
     Box(modifier = Modifier.fillMaxSize()) {
 
         Box(modifier = Modifier
@@ -36,7 +35,7 @@ fun PrototypeBox_III(){
             .clickable {
                 isClicked = !isClicked
                 try {
-                    worker.onBoxIIIClicked(isClicked)
+                    eventLink.onBoxIIIClicked(isClicked)
                 }
                 catch (e: Exception) {
                     System.err.println(e)
@@ -47,4 +46,12 @@ fun PrototypeBox_III(){
 
         }
     }
+}
+@Preview
+@Composable
+private fun TestUI(){
+    val mockEventLink = remember {
+        Worker()
+    }
+    PrototypeBox_III(eventLink = mockEventLink)
 }

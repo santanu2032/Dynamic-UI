@@ -49,7 +49,7 @@ fun PrototypeBox_I(eventLink: EventLink){
 }
 @Preview
 @Composable
-fun TestUI(){
+private fun TestUI(){
     val mockEventLink = remember {
         Worker()
     }
