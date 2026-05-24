@@ -4,7 +4,7 @@ package com.Presentation.CommonUI.values
 import androidx.compose.ui.graphics.Color
 
 class SantanuCC : CC {
-    //universal color can be used in multi-platform, warning if using pure HTML and CSS then use the CustomColor.java Class
+    //universal color can be used in multi-platform, warning if using pure HTML and CSS then use the CustomColor.kotlin Class
 
     override val navyBlue: Color=Color(android.graphics.Color.parseColor(CustomColor.NAVY_BLUE));
 
