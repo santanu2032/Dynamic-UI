@@ -18,7 +18,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.your.package.shared"  // ← use your real package name
+    namespace = "com.santanuapi.testUI.shared"
     compileSdk = 35
     defaultConfig {
         minSdk = 24
