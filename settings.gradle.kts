@@ -27,3 +27,4 @@ rootProject.name = "TestUI"
 include(":app")
 include(":shared")
 include(":desktopApp")
+include(":sharedUI")
