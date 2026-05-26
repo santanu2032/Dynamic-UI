@@ -28,3 +28,8 @@ include(":app")
 include(":shared")
 include(":desktopApp")
 include(":sharedUI")
+
+include(":Wave_Engine")
+project(":Wave_Engine").projectDir = File("Wave_Engine")
+
+

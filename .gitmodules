@@ -1,0 +1,6 @@
+[submodule "Alpha"]
+	path = Alpha
+	url = https://github.com/santanu2032/Alpha
+[submodule "Wave_Engine"]
+	path = Wave_Engine
+	url = https://github.com/santanu2032/Wave_Engine
