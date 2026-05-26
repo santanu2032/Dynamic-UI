@@ -2,11 +2,12 @@
 
 # 🌀 Project Codex: UI & Motion Engine
 
-**The core visual and mathematical rendering module for the Project Codex application.**
+**The core multi-platform visual, architectural, and mathematical rendering module for Project Codex Vanguard.**
 
 [![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
 [![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)](https://developer.android.com/jetpack/compose)
+[![Kotlin Multiplatform](https://img.shields.io/badge/Kotlin%20Multiplatform-7F52FF?logo=kotlin&logoColor=white)](https://kotlinlang.org/docs/multiplatform.html)
 
 </div>
 
@@ -14,11 +15,20 @@
 
 ## 📖 Overview
 
-This module acts as a specialized presentation and animation layer for **Project Codex**. It focuses on decoupling complex mathematical calculations—like circular motion and dynamic coordinate geometry—from standard UI state, allowing the main application to render high-performance, custom interfaces seamlessly.
+This repository houses the specialized presentation and animation layers for Project Codex. Recently evolved from an Android-exclusive sandbox, the project now leverages Kotlin Multiplatform (KMP) and JetBrains Compose Desktop to achieve true write-once, deploy-anywhere capability.
+
+By employing an extreme separation of concerns, the architecture completely decouples complex mathematical calculations—like circular motion and dynamic coordinate geometry—from the UI state. This allows Codex Vanguard to render high-performance, custom interfaces seamlessly natively on both Android and the Windows JVM.
 
 > **Note:** This module heavily utilizes the Jetpack Compose `Canvas` API for high-performance custom drawing operations tailored to the Codex ecosystem.
+## 🏗️ Architecture: The Heart/Brain Split
 
-## ✨ Key Features
+The project enforces a strict "Heart/Brain" architectural split to ensure zero platform dependency bleed, operating primarily on robust if-else deterministic logic rather than black-box ML.
+
+* 📦 **`:shared` (The Brain):** Purely hosts the custom math engines (like the Circular Motion Engine) and deterministic if-else logic. It contains **zero** Android or UI dependencies, making it entirely platform-agnostic. *(Note: The domain, network, and data layers are currently under development separately.)*
+* 🎨 **`:sharedUI` (The Presentation):** The universal design system. Houses `CommonUI` (including `Event_I`, `Event_II`, etc.) and presentation layers. This module ensures that Android and Windows can access the exact same Compose UI, preventing any duplication across platforms.
+* 🖥️ **`:desktopApp`:** The standalone entry point for native Windows execution via the Windows JVM (`WindowsMain.kt`).
+* 📱 **`:app`:** The standard Android device activity and lifecycle entry point.
+## ✨ Key Features & CoreSystem
 
 - **🧮 Custom Math Engines:** Pluggable engines (e.g., `Circular Motion Engine`) designed to drive dynamic animations and visual feedback without cluttering the master app's state.
 - **🎯 Modular Screen Logic:** Robust, standalone Kotlin functions for calculating device-agnostic metrics. 
@@ -26,10 +36,12 @@ This module acts as a specialized presentation and animation layer for **Project
 - **🎨 Canvas Rendering:** Advanced use of Compose Canvas for drawing custom shapes (`DrawCustomCircle`) and tracking historical movement paths (`trailUI`).
 - **🏗️ Clean Architecture:** Strict separation of concerns between the mathematical data generation and the Compose UI rendering layer, making it ready for integration into the larger Codex codebase.
 
+- **Unidirectional Data Flow (UDF) via EventLink:** UI is entirely decoupled from Worker logic. Direct worker instantiation inside prototype boxes has been replaced by injected EventLink interfaces, ensuring a highly maintainable, unidirectional data pipeline (with dummy objects supporting Compose @Preview).
 ## 🛠️ Tech Stack
 
 * **Language:** [Kotlin](https://kotlinlang.org/)
 * **UI Toolkit:** [Jetpack Compose](https://developer.android.com/jetpack/compose)
+* **Architecture:** Kotlin Multiplatform (KMP), Clean Architecture (Heart/Brain Split)
 * **Build Configuration:** Gradle (Kotlin DSL `build.gradle.kts`)
 * **Testing:** Fully supports both local JVM Unit Tests and Android Instrumented Tests to ensure UI reliability before merging to master.
 
@@ -89,14 +101,52 @@ fun BackgroundUI() {
 
 ```
 
+
 ## 🚀 Integration Status
-[x] Initial engine setup and Gradle configuration.
 
-[x] Implement dynamic screen center calculation.
+**Core Engine & UI Rendering**
+- [x] Initial engine setup and Gradle configuration.
+- [x] Implement dynamic screen center calculation for responsive rendering.
+- [x] Build responsive 2D starfield particle engine (with Schwarzschild radius event logic).
+- [x] Extract universal `CustomColor` package (independent of UI, ready for multi-platform & pure HTML/CSS).
+- [x] Refactor Main Screen UI for vastly improved maintainability.
 
-[x] Integrate basic trailUI and background tracking.
+**Architecture & Decoupling**
+- [x] Refactor project structure to separate Android device activity from the UI layer.
+- [x] Decouple UI from Worker logic via injected `EventLink` interfaces (enforcing Unidirectional Data Flow).
+- [x] Implement dummy `EventLink` objects to support Compose `@Preview`.
+- [x] Enforce strict Heart/Brain split (business logic isolated from presentation).
 
-[x] Complete Circular Motion Engine integration.
+**Kotlin Multiplatform (KMP) & Desktop Expansion**
+- [x] Resolve Gradle plugin conflicts and KMP implementation issues.
+- [x] Configure JetBrains Compose Desktop.
+- [x] Create the `:desktopApp` module to serve as the standalone Windows entry point.
+- [x] Implement the separated `:sharedUI` module for a universal design system.
+- [x] Successfully compile and execute Codex Vanguard natively on the Windows JVM.
 
-[ ] Finalize testing and merge into Project Codex master branch.
+**In Development / Next Steps**
+- **Alpha v2:** contain domain,data and network layers
 
+
+## 👤 Credits & Acknowledgements
+
+* **Lead Developer & Architect:** Santanu Sarkar ([@santanu2032](https://github.com/santanu2032))
+* **Core Frameworks:**
+  * [Kotlin Multiplatform (KMP)](https://kotlinlang.org/docs/multiplatform.html)
+  * [Jetpack Compose](https://developer.android.com/jetpack/compose)
+  * [JetBrains Compose Desktop](https://www.jetbrains.com/lp/compose-multiplatform/)
+
+*Project Codex Vanguard is entirely custom-built, focusing on modular architecture, high-performance mathematical rendering, and strict zero-dependency domain logic.*
+
+## 🤖 AI Collaboration & Tooling
+
+In the spirit of transparency and modern development practices, Project Codex Vanguard utilizes AI-powered assistants as collaborative tools during the development lifecycle.
+
+* **Debugging & Build Support:** AI acts as an active pair-programmer, heavily assisting in troubleshooting complex Kotlin Multiplatform (KMP) Gradle configurations, resolving Gradle sync/build conflicts, and accelerating boilerplate generation.
+* **Architectural Integrity:** While AI assists in debugging, syntax refinement, and drafting documentation, all core architectural blueprints—including the strict Heart/Brain separation of concerns—are entirely human-driven.
+* **Deterministic Execution:** It is important to note that while AI is used as a *development tool*, the actual resulting application and its internal assistant run strictly on highly-optimized, deterministic `if-else` conditional logic and explicit mathematical formulas. The engine itself does not execute black-box machine learning models at runtime.
+
+### 📸 Development Snapshots
+
+![img.png](img.png)
+![img_1.png](img_1.png)
