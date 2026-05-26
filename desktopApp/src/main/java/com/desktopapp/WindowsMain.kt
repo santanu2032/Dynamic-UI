@@ -1,4 +1,4 @@
-package com
+package com.desktopapp
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.runtime.LaunchedEffect
