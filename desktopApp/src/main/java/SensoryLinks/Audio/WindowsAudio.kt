@@ -62,18 +62,3 @@ class ContinuousAudioStream(
     }
 }
 
-// =========================================
-// Example Usage
-// =========================================
-fun main() {
-    val audioStreamer = ContinuousAudioStream(sampleRate = 16000f, channels = 1)
-
-    // Using .take(50) for the example so it doesn't run infinitely,
-    // but you can remove it to loop forever just like the Python example.
-    for (audioChunk in audioStreamer.listen().take(50)) {
-        // 'audioChunk' is a ByteArray containing raw 16-bit PCM data.
-        println("Received audio chunk of size: ${audioChunk.size} bytes")
-    }
-
-    println("Done listening.")
-}
