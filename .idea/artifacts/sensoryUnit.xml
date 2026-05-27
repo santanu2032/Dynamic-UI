@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="sensoryUnit">
+    <output-path>$PROJECT_DIR$/sensoryUnit/build/libs</output-path>
+    <root id="archive" name="sensoryUnit.jar">
+      <element id="module-output" name="TestUI.sensoryUnit.androidMain" />
+    </root>
+  </artifact>
+</component>

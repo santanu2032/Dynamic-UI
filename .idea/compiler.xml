@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="11">
       <module name="TestUI.sharedUI.jvmMain" target="21" />
       <module name="TestUI.sharedUI.jvmTest" target="21" />
+      <module name="TestUI.Wave_Engine" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

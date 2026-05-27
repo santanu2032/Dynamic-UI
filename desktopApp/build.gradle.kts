@@ -16,6 +16,7 @@ kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
     }
+
 }
 compose.desktop {
     application {
@@ -49,6 +50,9 @@ compose.desktop {
     }
 }
 dependencies {
+    implementation(libs.androidx.lifecycle.viewmodel.desktop)
+    implementation(kotlin("stdlib"))
+    implementation(project(":sensoryUnit"))
     implementation(compose.desktop.currentOs)
     implementation(project(":shared"))
     implementation(project(":sharedUI"))
