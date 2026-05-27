@@ -1,24 +1,28 @@
 package SensoryLinks.Audio
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
 
-// =========================================
-// Example Usage
-// =========================================
-private val _audioFlow = MutableSharedFlow<ByteArray>(replay = 0)
-val audioFlow = _audioFlow.asSharedFlow()
+class AudioActivity(private val scope: CoroutineScope): AudioSource {
+    private val _audioFlow = MutableSharedFlow<ByteArray>(replay = 0)
+    override val audioFlow = _audioFlow.asSharedFlow()
 
-suspend fun main() {
-    val audioStreamer = ContinuousAudioStream(sampleRate = 16000f, channels = 1)
+    suspend fun executeAudioActivity(n: Int) {
+        val audioStreamer = ContinuousAudioStream(sampleRate = 16000f, channels = 1)
 
-    // Using .take(50) for the example so it doesn't run infinitely,
-    // but you can remove it to loop forever just like the Python example.
-    for (audioChunk in audioStreamer.listen().take(50)) {
-        // 'audioChunk' is a ByteArray containing raw 16-bit PCM data.
-        println("Received audio chunk of size: ${audioChunk.size} bytes")
-        _audioFlow.emit(audioChunk)
+        // Using .take(50) for the example so it doesn't run infinitely,
+        // but you can remove it to loop forever just like the Python example.
+        scope.launch(Dispatchers.IO) {
+            for (audioChunk in audioStreamer.listen().take(n)) {//note n is hardcoded required a fix
+                // 'audioChunk' is a ByteArray containing raw 16-bit PCM data.
+                println("Received audio chunk of size: ${audioChunk.size} bytes")
+                _audioFlow.emit(audioChunk)
+            }
+        }
+        println("Done listening.")
     }
 
-    println("Done listening.")
 }
