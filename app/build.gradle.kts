@@ -62,4 +62,5 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     implementation(project(":shared"))
     implementation(project(":sharedUI"))
+    implementation(project(":Wave_Engine"))
 }
