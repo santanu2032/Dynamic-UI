@@ -1,7 +1,5 @@
 package com.Presentation.CommonUI.mainScreenUI.LocalDomain
 
-import com.Presentation.CommonUI.Event_II.Event_2
-import com.Presentation.CommonUI.mainScreenUI.PrototypeBox_II
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

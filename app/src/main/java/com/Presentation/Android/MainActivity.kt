@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.Presentation.CommonUI.StartScreen
 import com.Presentation.CommonUI.MainScreen
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.Worker
 import kotlinx.coroutines.delay
 
@@ -29,6 +30,7 @@ class MainActivity : ComponentActivity() {
                 modifier = Modifier.fillMaxSize(),
                 color = Color.Black
             ) {
+                val manager = remember { LocalManager() }
                 var showMainScreen by remember { mutableStateOf(false) }
                 val Link = remember { Worker() }
 
@@ -38,7 +40,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 if (showMainScreen) {
-                    MainScreen(Link)
+                    MainScreen(Link,manager)
                 } else {
                     StartScreen()
                 }
