@@ -14,6 +14,7 @@ import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.Color
 import com.Presentation.CommonUI.MainScreen
 import com.Presentation.CommonUI.StartScreen
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.Worker
 
 
@@ -28,7 +29,7 @@ fun main() = application {
         ) {
             var showMainScreen by remember { mutableStateOf(false) }
             val link = remember { Worker() }
-            var boxOneStatus by remember { mutableStateOf(true) }
+            val localManager = remember { LocalManager() }
 
             LaunchedEffect(Unit) {
                 delay(5000)
@@ -36,7 +37,7 @@ fun main() = application {
             }
 
             if (showMainScreen) {
-                MainScreen(link)
+                MainScreen(link, localManager)
             } else {
                 StartScreen()
             }

@@ -11,13 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 import com.Presentation.CommonUI.values.CustomColorKT
 
 
 
 
 @Composable
-fun DrawMainScreenBackground(eventLink: EventLink) {
+fun DrawMainScreenBackground(eventLink: EventLink,manager: LocalManager) {
     Box(modifier = Modifier.fillMaxSize().background(CustomColorKT.EerieBlack())) {
         Text(
             text = "Test",
@@ -26,7 +27,7 @@ fun DrawMainScreenBackground(eventLink: EventLink) {
         )
         StatusBar()
         PrototypeBox_I(eventLink)
-        PrototypeBox_II(eventLink)
+        PrototypeBox_II(manager)
         PrototypeBox_III(eventLink)
         PrototypeBox_IV(eventLink)
         NavigationBar()

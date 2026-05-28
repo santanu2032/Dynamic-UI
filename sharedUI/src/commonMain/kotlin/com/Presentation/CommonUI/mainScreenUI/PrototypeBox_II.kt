@@ -16,11 +16,11 @@ import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 
 
 @Composable
-fun PrototypeBox_II(eventLink: EventLink){
+fun PrototypeBox_II(manager: LocalManager){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
     Box(modifier = Modifier.fillMaxSize()) {
@@ -34,7 +34,7 @@ fun PrototypeBox_II(eventLink: EventLink){
             .clickable {
                 isClicked = !isClicked
                 try {
-                    eventLink.onBoxIIClicked(isClicked)
+                  manager.Clicked()
                 }
                 catch (e: Exception) {
                     System.err.println(e)
