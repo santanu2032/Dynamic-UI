@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.Presentation.CommonUI.Event.ActivatingAudioInputUnit
 import com.Presentation.CommonUI.Event.EventManager
 import kotlin.math.round
 
@@ -40,8 +41,10 @@ fun Event_2() {
             }
             , contentAlignment = Alignment.Center
         ){
+
             Text("Test the AI button")
         }
+
 
     }
 }

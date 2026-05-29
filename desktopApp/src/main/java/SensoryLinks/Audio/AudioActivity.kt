@@ -10,7 +10,7 @@ class AudioActivity(private val scope: CoroutineScope): AudioSource {
     private val _audioFlow = MutableSharedFlow<ByteArray>(replay = 0)
     override val audioFlow = _audioFlow.asSharedFlow()
 
-    suspend fun executeAudioActivity(n: Int) {
+  fun executeAudioActivity(n: Int) {
         val audioStreamer = ContinuousAudioStream(sampleRate = 16000f, channels = 1)
 
         // Using .take(50) for the example so it doesn't run infinitely,
