@@ -1,17 +1,24 @@
 package com.desktopapp
 
-import SensoryLinks.Audio.AudioActivity
+import com.Presentation.CommonUI.Event.AudioPlatformLink
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-class Test(applicationScope: CoroutineScope) {
-    val audioManager = AudioActivity(applicationScope)
+class TestWindows(
+    private val platformLink: AudioPlatformLink
+) : IntentManagerContract {
 
-    fun main() {
-        CoroutineScope(Dispatchers.Default).launch {
-            audioManager.executeAudioActivity(50)
+    private val scope = CoroutineScope(Dispatchers.Default)  // ✅ owned here
+
+    override fun onAudioInputRequested() {
+        scope.launch {          // fire
+            platformLink.execute()  // and forget
         }
     }
-}
 
+    override fun shutdownAudioRequest() {
+        scope.cancel()          // clean up when IntendManager dies
+    }
+}
