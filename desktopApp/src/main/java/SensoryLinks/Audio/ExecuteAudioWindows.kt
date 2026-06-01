@@ -25,4 +25,16 @@ class ExecuteAudioWindows (private val applicationScope: CoroutineScope): AudioP
             }
         }
     }
+
+   override fun stop(){
+       applicationScope.launch(Dispatchers.IO){
+           try {
+               audioManager.stopAudioActivity()
+           } catch (e: IOException) {
+               println(e.message)
+           } catch (e: Exception) {
+               e.printStackTrace()
+           }
+       }
+   }
 }
