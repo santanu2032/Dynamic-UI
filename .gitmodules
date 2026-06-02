@@ -4,3 +4,9 @@
 [submodule "Wave_Engine"]
 	path = Wave_Engine
 	url = https://github.com/santanu2032/Wave_Engine
+[submodule "shared/src/nativeInterop/whisper"]
+	path = shared/src/nativeInterop/whisper
+	url = https://github.com/ggerganov/whisper.cpp.git
+[submodule "sensoryUnit/src/nativeInterop/whisper"]
+	path = sensoryUnit/src/nativeInterop/whisper
+	url = https://github.com/ggerganov/whisper.cpp.git
