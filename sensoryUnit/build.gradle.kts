@@ -4,15 +4,14 @@ plugins {
     alias(libs.plugins.android.lint)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+
 }
 
 kotlin {
-
     android {
         namespace = "com.sensoryunit"
         compileSdk {
             version = release(36) { minorApiLevel = 1 }
-
         }
         minSdk = 31
 
@@ -24,27 +23,21 @@ kotlin {
         }
     }
 
-    // ── iOS ───────────────────────────────────────────────────────────
     val xcfName = "sensoryUnitKit"
     iosX64            { binaries.framework { baseName = xcfName } }
     iosArm64          { binaries.framework { baseName = xcfName } }
     iosSimulatorArm64 { binaries.framework { baseName = xcfName } }
 
-    // ── Desktop / Windows ─────────────────────────────────────────────
     jvm("desktop") {
         compilerOptions {
             jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         }
     }
 
-    // ── Source Sets ───────────────────────────────────────────────────
     sourceSets {
-
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
-
-                // ── Compose Multiplatform (shared UI) ─────────────
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material3)
@@ -61,7 +54,6 @@ kotlin {
 
         androidMain {
             dependencies {
-                // Compose Android extras
                 implementation(compose.uiTooling)
                 implementation(compose.preview)
             }
@@ -76,18 +68,14 @@ kotlin {
         }
 
         iosMain {
-            dependencies {
-                // iOS Compose is handled by commonMain automatically
-            }
+            dependencies {}
         }
 
         val desktopMain by getting {
             dependencies {
-                // Compose Desktop renderer
                 implementation(compose.desktop.currentOs)
-
-                // javax.sound.sampled auto-available — no extra dep
             }
         }
     }
 }
+
