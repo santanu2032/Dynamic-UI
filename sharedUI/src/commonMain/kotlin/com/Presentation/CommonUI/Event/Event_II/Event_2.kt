@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import com.Presentation.CommonUI.Event.AppContainer
@@ -33,10 +34,10 @@ fun Event_2() {
     ) {
 
         Box(modifier = Modifier
-            .fillMaxWidth(0.32f)
-            .fillMaxHeight(0.15f)
+            .fillMaxWidth(0.105f)
+            .fillMaxHeight(0.08f)
             .background(color = Color.White,shape = CircleShape)
-            .align(Alignment.Center)
+            .align(BiasAlignment(horizontalBias = 0.8f, verticalBias = 0.96f))
             .clickable{
                 manager.updateEventTrigger1()
             }
