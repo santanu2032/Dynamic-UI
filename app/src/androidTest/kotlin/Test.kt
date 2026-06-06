@@ -89,32 +89,32 @@ fun Test(){
             Text("send")
         }
 
-
-        TextField(
-            modifier = Modifier
-                .fillMaxWidth(0.65f)
-                .fillMaxHeight(0.085f)
-                .align(BiasAlignment(horizontalBias = -0.83f, verticalBias = 0.96f)),
-            state = rememberTextFieldState(""),
-            placeholder = { Text("Type something...") },
-            textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center),
-            shape = CircleShape,
-            colors = TextFieldDefaults.colors(
-                focusedContainerColor = Color.Gray,
-                unfocusedContainerColor = Color.Black,
-                focusedTextColor = Color.White,
-                unfocusedTextColor = Color.White,
-                focusedIndicatorColor = SantanuCC().navyBlue,
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent,
-                errorIndicatorColor = Color.Red,
-                cursorColor = SantanuCC().navyBlue,
-                selectionColors = androidx.compose.foundation.text.selection.TextSelectionColors(
-                    handleColor = SantanuCC().navyBlue,
-                    backgroundColor = SantanuCC().navyBlue.copy(alpha = 0.4f)
-                )
+Box( modifier = Modifier
+    .fillMaxWidth(0.65f)
+    .fillMaxHeight(0.08f)
+    .align(BiasAlignment(horizontalBias = -0.86f, verticalBias = 0.96f))) {
+    TextField(
+        modifier = Modifier.fillMaxSize(),
+        state = rememberTextFieldState(""),
+        placeholder = { Text("Type something...") },
+        textStyle = LocalTextStyle.current.copy(textAlign = TextAlign.Center),
+        shape = CircleShape,
+        colors = TextFieldDefaults.colors(
+            focusedContainerColor = Color.Gray,
+            unfocusedContainerColor = Color.Black,
+            focusedTextColor = Color.White,
+            unfocusedTextColor = Color.White,
+            focusedIndicatorColor = SantanuCC().navyBlue,
+            unfocusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent,
+            errorIndicatorColor = Color.Red,
+            cursorColor = SantanuCC().navyBlue,
+            selectionColors = androidx.compose.foundation.text.selection.TextSelectionColors(
+                handleColor = SantanuCC().navyBlue,
+                backgroundColor = SantanuCC().navyBlue.copy(alpha = 0.4f)
             )
         )
-
+    )
+}
     }
 }
