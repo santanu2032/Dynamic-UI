@@ -39,5 +39,6 @@ fun Event_2() {
     manager = AppContainer.eventManager,
     platformLink = AppContainer.audioPlatformLink
 )/***/
+        Output()
         InputContainer()
 }

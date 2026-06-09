@@ -24,7 +24,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
@@ -36,6 +39,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.Presentation.CommonUI.Event.EventStatus
 import com.Presentation.CommonUI.Event.Event_II.Event_2
 import com.Presentation.CommonUI.Event.Event_II.TextField_event_2
@@ -148,64 +152,64 @@ Box( modifier = Modifier
 
     }
 }
-@Preview
+
 @Composable
 fun InputContainer(){
 
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Black)){
+        .background(Color.Black)){//TODO    (change to TRANSPARENT)
 
-       Row(modifier = Modifier
+        Row(modifier = Modifier
             .padding(8.dp)
             .fillMaxWidth()
             .fillMaxHeight(0.08f)
             .align(Alignment.BottomCenter)
             .background(Color.Red, shape = RoundedCornerShape(24.dp)),
-           horizontalArrangement = Arrangement.spacedBy(2.dp, alignment = Alignment.End),
-           verticalAlignment = Alignment.CenterVertically){
+            horizontalArrangement = Arrangement.spacedBy(2.dp, alignment = Alignment.End),//TODO    (change tHE COLOR UX OPERATION)
+            verticalAlignment = Alignment.CenterVertically){
 
 
-           Box(modifier = Modifier
-               .padding(end = 5.dp, start = 3.dp, top = 3.dp, bottom = 3.dp)
-               .width(285.dp)
-               .fillMaxHeight()
-               .clip(CircleShape)
-               .background(Color.Green)
-           ){
-
-               TextField_event_2()
-           }
-
-           Box(
-            modifier = Modifier
-                .padding(end = 10.dp)
-                .width(30.dp)
-                .height(40.dp)
+            Box(modifier = Modifier
+                .padding(end = 5.dp, start = 3.dp, top = 3.dp, bottom = 3.dp)
+                .width(285.dp)
+                .fillMaxHeight()
                 .clip(CircleShape)
+                .background(Color.Green)//TODO    (change THE COLOR UX OPERATION)
+            ){
 
-                .background(color = Color.White)
-                .clickable{
-                    TODO("link the manager")
-                },
-            contentAlignment = Alignment.Center) {
-            Text(text = "A") }
-           Box(
-               modifier = Modifier
-                   .padding(end = 10.dp)
-                   .width(30.dp)
-                   .height(40.dp)
-                   .clip(CircleShape)
+                TextField_event_2()
+            }
 
-                   .background(color = Color.White)
-                   .clickable{
-                       TODO("link the manager")
-                   },
-               contentAlignment = Alignment.Center
-           )
-           {
-               Text(text = "A")
-           }
+            Box(
+                modifier = Modifier
+                    .padding(end = 10.dp)
+                    .width(30.dp)
+                    .height(40.dp)
+                    .clip(CircleShape)
+
+                    .background(color = Color.White)
+                    .clickable{
+                        TODO("link the manager")
+                    },
+                contentAlignment = Alignment.Center) {
+                Text(text = "A") }
+            Box(
+                modifier = Modifier
+                    .padding(end = 10.dp)
+                    .width(30.dp)
+                    .height(40.dp)
+                    .clip(CircleShape)
+
+                    .background(color = Color.White)
+                    .clickable{
+                        TODO("link the manager")
+                    },
+                contentAlignment = Alignment.Center
+            )
+            {
+                Text(text = "A")
+            }
 
 
 
@@ -214,4 +218,33 @@ fun InputContainer(){
 
     }
 
+}
+@Preview
+@Composable
+fun Output() {
+
+    var dummy by remember { mutableStateOf("test") }
+
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(Color.Black)
+        .zIndex(0f)
+
+    ) {
+
+        TextField(value = dummy, onValueChange = { dummy = it },
+            modifier = Modifier
+            .fillMaxSize()
+                .align(Alignment.Center),
+            textStyle = TextStyle(color = Color.White, textAlign = TextAlign.Center),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                cursorColor = Color.White,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                disabledIndicatorColor = Color.Transparent
+            )
+        )
+    }
 }

@@ -23,12 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
+
 @Composable
 fun InputContainer(){
 
     Box(modifier = Modifier
         .fillMaxSize()
-        .background(Color.Black)){
+        .background(Color.Transparent)
+        .zIndex(1f)
+    ){
 
         Row(modifier = Modifier
             .padding(8.dp)
@@ -36,7 +40,7 @@ fun InputContainer(){
             .fillMaxHeight(0.08f)
             .align(Alignment.BottomCenter)
             .background(Color.Red, shape = RoundedCornerShape(24.dp)),
-            horizontalArrangement = Arrangement.spacedBy(2.dp, alignment = Alignment.End),
+            horizontalArrangement = Arrangement.spacedBy(2.dp, alignment = Alignment.End),//TODO    (change tHE COLOR UX OPERATION)
             verticalAlignment = Alignment.CenterVertically){
 
 
@@ -45,7 +49,7 @@ fun InputContainer(){
                 .width(285.dp)
                 .fillMaxHeight()
                 .clip(CircleShape)
-                .background(Color.Green)
+                .background(Color.Green)//TODO    (change THE COLOR UX OPERATION)
             ){
 
                 TextField_event_2()
