@@ -48,6 +48,7 @@ import com.Presentation.CommonUI.values.SantanuCC
 import org.junit.Rule
 import java.nio.file.WatchEvent
 
+
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
@@ -133,7 +134,7 @@ fun InputContainer(){
     }
 
 }
-@Preview
+//@Preview
 @Composable
 fun Output() {
 
@@ -161,4 +162,37 @@ fun Output() {
             )
         )
     }
+}
+@Preview
+@Composable
+fun Network_UI(){
+Box(modifier = Modifier
+
+    .fillMaxSize()
+    .background(color = Color.Black)
+
+) {
+
+    Box(modifier = Modifier
+        .fillMaxWidth(0.9f)
+        .fillMaxHeight(0.2f)
+        .background(color = Color.Red)//TODO("change it to mutable or remote calling")
+        .align(alignment = BiasAlignment(horizontalBias = 0.1f, verticalBias = -0.96f))
+        .padding(all = 20.dp),
+        contentAlignment = Alignment.Center,
+
+
+    ){Text("Status")}
+    Box(modifier = Modifier
+        .fillMaxHeight(0.08f)
+        .fillMaxWidth(0.3f)
+        .align(alignment = Alignment.Center)
+        .background(color = Color.White),
+        contentAlignment = Alignment.Center
+
+    ) {
+        Text("Test run")
+    }
+
+}
 }

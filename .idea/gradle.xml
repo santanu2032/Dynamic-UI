@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/desktopApp" />
+            <option value="$PROJECT_DIR$/network_android" />
             <option value="$PROJECT_DIR$/sensoryUnit" />
             <option value="$PROJECT_DIR$/shared" />
             <option value="$PROJECT_DIR$/sharedUI" />

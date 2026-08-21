@@ -34,3 +34,4 @@ include(":sensoryUnit")
 
 
 include(":sensoryUnit")
+include(":network_android")
