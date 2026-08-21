@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "583637206060",
+    "project_id": "server-bond",
+    "storage_bucket": "server-bond.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583637206060:android:e058941b64f053a35b7d89",
+        "android_client_info": {
+          "package_name": "com.santanu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCT2o1zbu_bx0bVrLiG7Ak5uATdv3MvmI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
