@@ -3,9 +3,9 @@ package com.santanuapi.network_android
 import com.google.firebase.FirebaseOptions
 
 data class RAW_KEY(
-    val application_id: String="",
-    val project_id:String="",
-    val api_key:String=""
+    val application_id: String="1:583637206060:android:e058941b64f053a35b7d89",
+    val project_id:String="server-bond",
+    val api_key:String="AIzaSyDCT2o1zbu_bxObVrL1G7Ak5uATdv3MvmI"
 )
 
 
