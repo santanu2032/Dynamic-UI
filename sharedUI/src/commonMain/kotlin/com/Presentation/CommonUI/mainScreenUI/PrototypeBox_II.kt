@@ -21,7 +21,7 @@ import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 
 @Composable
 fun PrototypeBox_II(manager: LocalManager){
-    var isClicked by remember { mutableStateOf(false) }
+    var isClicked by remember { mutableStateOf(false) }//local state
     val boxColor = if (isClicked) Color.Gray else Color.White
     Box(modifier = Modifier.fillMaxSize()) {
 
@@ -34,7 +34,7 @@ fun PrototypeBox_II(manager: LocalManager){
             .clickable {
                 isClicked = !isClicked
                 try {
-                  manager.Clicked()
+                  manager.Clicked()//global state
                 }
                 catch (e: Exception) {
                     System.err.println(e)
