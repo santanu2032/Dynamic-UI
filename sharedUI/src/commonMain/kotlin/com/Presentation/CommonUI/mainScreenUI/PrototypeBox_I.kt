@@ -17,10 +17,11 @@ import androidx.compose.ui.graphics.Color
 
 
 import androidx.compose.ui.unit.dp
+import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 
 
 @Composable
-fun PrototypeBox_I(eventLink: EventLink){
+fun PrototypeBox_I(manager: LocalManager){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
 
@@ -36,7 +37,7 @@ fun PrototypeBox_I(eventLink: EventLink){
             .clickable {
                 isClicked = !isClicked
                 try {
-                    eventLink.onBoxIClicked(isClicked)
+                    manager.Clicked_1()
                 }
                 catch (e: Exception) {
                     System.err.println(e)

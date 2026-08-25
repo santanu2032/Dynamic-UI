@@ -13,6 +13,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import com.Presentation.CommonUI.Event.Event_I.network_module_UI.Link_NWAM_UI
+import com.Presentation.CommonUI.Event.Event_I.network_module_UI.Local_Manager_Network
 import com.Presentation.CommonUI.StartScreen
 import com.Presentation.CommonUI.MainScreen
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
@@ -33,6 +35,7 @@ class MainActivity : ComponentActivity() {
                 val manager = remember { LocalManager() }
                 var showMainScreen by remember { mutableStateOf(false) }
                 val Link = remember { Worker() }
+                val network =remember { Local_Manager_Network() }
 
                 LaunchedEffect(Unit) {
                     delay(5000)
@@ -40,7 +43,7 @@ class MainActivity : ComponentActivity() {
                 }
 
                 if (showMainScreen) {
-                    MainScreen(Link,manager)
+                    MainScreen(Link,manager,network)
                 } else {
                     StartScreen()
                 }

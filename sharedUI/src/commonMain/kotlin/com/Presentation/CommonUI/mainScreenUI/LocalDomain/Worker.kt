@@ -3,11 +3,11 @@ package com.Presentation.CommonUI.mainScreenUI.LocalDomain
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import com.Presentation.CommonUI.mainScreenUI.EventLink
+import com.Presentation.CommonUI.mainScreenUI.localManager
 
 
 
-class Worker : EventLink {
+class Worker : localManager {
     var isSelected by mutableStateOf(false)
 
 

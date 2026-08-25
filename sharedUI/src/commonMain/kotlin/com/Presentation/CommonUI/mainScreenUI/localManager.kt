@@ -1,6 +1,6 @@
 package com.Presentation.CommonUI.mainScreenUI
 
-interface EventLink {
+interface localManager {
     fun onBoxIClicked(currentStatus: Boolean): Boolean
     fun onBoxIIClicked(currentStatus: Boolean): Boolean
     fun onBoxIIIClicked(currentStatus: Boolean): Boolean

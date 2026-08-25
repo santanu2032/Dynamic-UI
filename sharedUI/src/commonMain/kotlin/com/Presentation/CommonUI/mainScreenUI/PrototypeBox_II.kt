@@ -34,7 +34,7 @@ fun PrototypeBox_II(manager: LocalManager){
             .clickable {
                 isClicked = !isClicked
                 try {
-                  manager.Clicked()//global state
+                  manager.Clicked_2()//global state
                 }
                 catch (e: Exception) {
                     System.err.println(e)

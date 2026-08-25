@@ -5,17 +5,25 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 data class LocalUiState(
-    val isClicked: Boolean = false
+    val isClicked_2: Boolean = false,
+    val isClicked_1:Boolean=false
 )
 
 class LocalManager {
 
-    private val _uiState = MutableStateFlow(LocalUiState())
-    val uiState: StateFlow<LocalUiState> = _uiState.asStateFlow()
+    private val _uiState_2 = MutableStateFlow(LocalUiState())
+    private val _uiState_1=MutableStateFlow(LocalUiState())
+    val uiState_2: StateFlow<LocalUiState> = _uiState_2.asStateFlow()
 
-    fun Clicked() {
-        _uiState.value = _uiState.value.copy(isClicked = !_uiState.value.isClicked)
+    val uiState_1: StateFlow<LocalUiState> = _uiState_1.asStateFlow()
 
+    fun Clicked_2() {
+        _uiState_2.value = _uiState_2.value.copy(isClicked_2 = !_uiState_2.value.isClicked_2)
+
+    }
+
+    fun Clicked_1(){
+        _uiState_1.value =_uiState_1.value.copy(isClicked_1 = !_uiState_1.value.isClicked_1)
     }
 
 }

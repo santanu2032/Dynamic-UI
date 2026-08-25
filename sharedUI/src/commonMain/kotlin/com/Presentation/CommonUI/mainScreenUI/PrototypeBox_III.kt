@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun PrototypeBox_III(eventLink: EventLink){
+fun PrototypeBox_III(eventLink: localManager){
     var isClicked by remember { mutableStateOf(false) }
     val boxColor = if (isClicked) Color.Gray else Color.White
     Box(modifier = Modifier.fillMaxSize()) {

@@ -5,12 +5,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.Presentation.CommonUI.mainScreenUI.EventLink
+import com.Presentation.CommonUI.mainScreenUI.localManager
 
 
 @Composable
 fun ScreenLink(
-    eventHandler: EventLink
+    eventHandler: localManager
 ) {
 
     var event1 by remember { mutableStateOf(eventHandler::onBoxIClicked) }

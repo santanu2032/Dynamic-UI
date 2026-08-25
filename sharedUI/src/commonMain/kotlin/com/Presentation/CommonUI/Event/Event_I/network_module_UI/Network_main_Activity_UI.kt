@@ -1,4 +1,4 @@
-package com.Presentation.CommonUI.network_module_UI
+package com.Presentation.CommonUI.Event.Event_I.network_module_UI
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
