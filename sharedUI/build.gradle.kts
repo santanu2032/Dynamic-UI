@@ -28,6 +28,7 @@ kotlin {
             implementation(compose.ui)
 
             implementation(project(":shared"))
+            implementation(project(":Domain"))
         }
 
         androidMain.dependencies {
@@ -37,7 +38,7 @@ kotlin {
         val desktopMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
-            }
+                }
         }
     }
 }
@@ -52,4 +53,5 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
 }

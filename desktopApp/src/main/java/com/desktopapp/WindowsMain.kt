@@ -15,8 +15,7 @@ import androidx.compose.ui.window.application
 import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.Color
 import com.Presentation.CommonUI.Event.AppContainer
-import com.Presentation.CommonUI.Event.AudioPlatformLink
-import com.Presentation.CommonUI.Event.Event_I.network_module_UI.Local_Manager_Network
+import com.Presentation.CommonUI.Event.Event_I.network_module_UI.Local_Manager_NetworkUIRepository
 import com.Presentation.CommonUI.MainScreen
 import com.Presentation.CommonUI.StartScreen
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
@@ -42,7 +41,7 @@ fun main() = application {
             var showMainScreen by remember { mutableStateOf(false) }
             val link = remember { Worker() }
             val localManager = remember { LocalManager() }
-            val network =remember { Local_Manager_Network() }
+            val network =remember { Local_Manager_NetworkUIRepository() }
             LaunchedEffect(Unit) {
                 delay(5000)
                 showMainScreen = true

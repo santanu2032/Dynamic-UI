@@ -18,10 +18,11 @@ import androidx.compose.ui.BiasAlignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.domain.NetworkUILinkRepository
 
 
 @Composable
-fun Network_UI(networkEvent: Link_NWAM_UI){
+fun Network_UI(networkEvent: NetworkUILinkRepository){
 
     var isClicked by remember{mutableStateOf(false)}
     val boxColor = if (isClicked) Color.Gray else Color.White
