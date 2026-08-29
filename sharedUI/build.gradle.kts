@@ -26,6 +26,7 @@ kotlin {
             implementation(compose.foundation)
             implementation(compose.material3)
             implementation(compose.ui)
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.11.0")
 
             implementation(project(":shared"))
             implementation(project(":Domain"))

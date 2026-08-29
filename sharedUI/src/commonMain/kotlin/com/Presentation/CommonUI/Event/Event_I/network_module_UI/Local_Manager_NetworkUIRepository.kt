@@ -5,7 +5,8 @@ import com.domain.NetworkUILinkRepository
 
 
 
-class Local_Manager_NetworkUIRepository: NetworkUILinkRepository {
+class
+Local_Manager_NetworkUIRepository: NetworkUILinkRepository {
 
 
     override  fun Status_Report(status: Boolean): Boolean {
