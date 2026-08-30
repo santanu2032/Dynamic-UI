@@ -16,13 +16,16 @@ import kotlinx.coroutines.delay
 import androidx.compose.ui.graphics.Color
 import com.Presentation.CommonUI.Event.AppContainer
 import com.Presentation.CommonUI.Event.Event_I.network_module_UI.Local_Manager_NetworkUIRepository
+import com.Presentation.CommonUI.Event.Event_I.network_module_UI.NetworkManager
 import com.Presentation.CommonUI.MainScreen
 import com.Presentation.CommonUI.StartScreen
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 import com.Presentation.CommonUI.mainScreenUI.LocalDomain.Worker
+import com.domain.RequestRepository
+import com.domain.RequestReprositoryRouter
 
 
-fun main() = application {
+fun main() = application {//composition root
     Window(
         onCloseRequest = ::exitApplication,
         title = "Codex Vanguard"
@@ -42,13 +45,15 @@ fun main() = application {
             val link = remember { Worker() }
             val localManager = remember { LocalManager() }
             val network =remember { Local_Manager_NetworkUIRepository() }
+            val request= remember { RequestRepository() }
+            val networkManager=remember { NetworkManager(request) }
             LaunchedEffect(Unit) {
                 delay(5000)
                 showMainScreen = true
             }
 
             if (showMainScreen) {
-                MainScreen(link, localManager,network)
+                MainScreen(link, localManager,network,networkManager)
             } else {
                 StartScreen()
             }

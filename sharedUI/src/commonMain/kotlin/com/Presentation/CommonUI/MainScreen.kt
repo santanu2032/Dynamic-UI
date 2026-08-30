@@ -7,6 +7,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.Presentation.CommonUI.Event.Event_I.Event_1
+import com.Presentation.CommonUI.Event.Event_I.network_module_UI.NetworkManager
 import com.domain.NetworkUILinkRepository
 import com.Presentation.CommonUI.Event.Event_II.Event_2
 import com.Presentation.CommonUI.mainScreenUI.DrawMainScreenBackground
@@ -15,7 +16,7 @@ import com.Presentation.CommonUI.mainScreenUI.LocalDomain.LocalManager
 
 
 @Composable
-fun MainScreen(eventLink: localManager, localManager: LocalManager,networkEvent: NetworkUILinkRepository){
+fun MainScreen(eventLink: localManager, localManager: LocalManager,networkEvent: NetworkUILinkRepository,networkManager: NetworkManager){
 
     val currentState_prototypeBox_II by localManager.uiState_2.collectAsState()
     val currentState_prototypeBox_I by localManager.uiState_1.collectAsState()
@@ -29,7 +30,7 @@ fun MainScreen(eventLink: localManager, localManager: LocalManager,networkEvent:
             Event_2()
         }
         else if(currentState_prototypeBox_I.isClicked_1){
-            Event_1(networkEvent)
+            Event_1(networkEvent,networkManager)
         }
         else{
             DrawMainScreenBackground(eventLink,localManager)

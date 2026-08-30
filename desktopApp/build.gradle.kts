@@ -56,4 +56,7 @@ dependencies {
     implementation(compose.desktop.currentOs)
     implementation(project(":shared"))
     implementation(project(":sharedUI"))
+    implementation(project(":Domain"))
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.swing)
 }

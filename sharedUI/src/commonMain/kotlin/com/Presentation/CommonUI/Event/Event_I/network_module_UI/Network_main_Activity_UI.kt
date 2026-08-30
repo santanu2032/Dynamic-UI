@@ -22,7 +22,7 @@ import com.domain.NetworkUILinkRepository
 
 
 @Composable
-fun Network_UI(networkEvent: NetworkUILinkRepository){
+fun Network_UI(networkEvent: NetworkUILinkRepository,networkManager: NetworkManager){
 
     var isClicked by remember{mutableStateOf(false)}
     val boxColor = if (isClicked) Color.Gray else Color.White
@@ -52,6 +52,9 @@ fun Network_UI(networkEvent: NetworkUILinkRepository){
             .clickable{
                 isClicked=true
                 networkEvent.Status_Report(isClicked)
+                networkManager.requestNetworkActivity()
+                val state = networkManager.sendRequest.value
+                print("Test"+state)
             }
             ,
             contentAlignment = Alignment.Center
