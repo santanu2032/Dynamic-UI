@@ -9,7 +9,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Data" />
             <option value="$PROJECT_DIR$/Domain" />
+            <option value="$PROJECT_DIR$/LocalDatabase" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/desktopApp" />
             <option value="$PROJECT_DIR$/network_android" />
